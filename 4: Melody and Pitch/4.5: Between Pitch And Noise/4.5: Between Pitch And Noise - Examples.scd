@@ -98,7 +98,7 @@ p.clock.tempo = 2.4;
 SynthDef(\henon,
 	{arg freq=440,mfreq=440,a=1.3,b=0.3,x0=0.30501993062401,y0=0.20938865431933,atk=0.01,sus=1,rel=1,ts=1,out=0,pan=0,amp=0.3;
 		var sig,env;
-		sig = Henon2DN.ar(freq,freq+mfreq,a,b,x0,y0,amp);
+		sig = HenonN.ar(freq,freq+mfreq,a,b,x0,y0,amp);
 		env = EnvGen.ar(Env.linen(atk,sus,rel),1,1,0,ts,2);
 		sig = LeakDC.ar(sig);
 		sig = sig*env;
@@ -116,7 +116,7 @@ p.clock.tempo = 2.2;
 SynthDef(\henon,
 	{arg freq=440,mfreq=440,a=1.3,b=0.3,x0=0.30501993062401,y0=0.20938865431933,atk=0.01,sus=1,rel=1,ts=1,out=0,pan=0,amp=0.3;
 		var sig,env;
-		sig = Henon2DL.ar(freq,freq+mfreq,a,b,x0,y0,amp);
+		sig = HenonL.ar(freq,freq+mfreq,a,b,x0,y0,amp);
 		env = EnvGen.ar(Env.linen(atk,sus,rel),1,1,0,ts,2);
 		sig = LeakDC.ar(sig);
 		sig = sig*env;
@@ -128,7 +128,7 @@ SynthDef(\henon,
 SynthDef(\henon,
 	{arg freq=440,mfreq=440,a=1.3,b=0.3,x0=0.30501993062401,y0=0.20938865431933,atk=0.01,sus=1,rel=1,ts=1,out=0,pan=0,amp=0.3;
 		var sig,env;
-		sig = Henon2DC.ar(freq,freq+mfreq,a,b,x0,y0,amp);
+		sig = HenonC.ar(freq,freq+mfreq,a,b,x0,y0,amp);
 		env = EnvGen.ar(Env.linen(atk,sus,rel),1,1,0,ts,2);
 		sig = LeakDC.ar(sig);
 		sig = sig*env;
